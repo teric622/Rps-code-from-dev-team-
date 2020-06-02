@@ -1,6 +1,9 @@
-.player-image{
-    width: 210px;
-    height: 210px;
-    margin-bottom: 12px;
-    
+.player-image
+{ 
+width: 210px;
+   height: 240px;
+   bottom: 12px;
+   border-radius: 80px;
+  background: transparent;
+
 }

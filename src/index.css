@@ -8,7 +8,7 @@
   font-size: 1em;
 }
 body {
-  background: #ffffff !important;
+  background:#ededed!important;
   max-height: 50vh;
   display: flex;
   font-weight: 400;
@@ -91,8 +91,7 @@ body, html, .App, #root, .auth-wrapper, .auth-inner, .form-control {
 
 .play-btn {
   display: flex;
-  justify-content: center;
-  justify-content: space-around;
+  justify-content: center space-around;
   margin-top: 15px;
   padding: .2em;
 }
@@ -168,12 +167,18 @@ body, html, .App, #root, .auth-wrapper, .auth-inner, .form-control {
 
 
 /* Hands CSS */
-
-.hands{
-  display:flex;
-  justify-content: space-between;
-  justify-content: center;
+.computer-hand{
+height: 20vmax;
+width: 20vmax;
 }
+
+.player-hand{
+height:  200px;
+  width: auto;;
+
+}
+
+
 
 
 /* Menu & MenuButton CSS */
@@ -182,15 +187,15 @@ body, html, .App, #root, .auth-wrapper, .auth-inner, .form-control {
   display:flex;
   position: relative;
   justify-content: left;
-  background-color: white;
-  margin-left:-1em;
+  background-color: transparent;
+  margin-left:-0.5em;
   margin-bottom:2em;
-  height:4em;
-  width:4em;
-  border-radius:25px;
+  height:1em;
+  width:1em;
   border-color:transparent;
   font-family: 'Quicksand', sans-serif;
-  font-size: 1.25em;
+  font-size: 2em;
+text-align: center;
 }
 
 .menu {

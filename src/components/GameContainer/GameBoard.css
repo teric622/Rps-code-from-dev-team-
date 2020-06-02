@@ -1,0 +1,166 @@
+* {
+  background-color: #ededed;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  padding: 2px;
+}
+
+.score-board  {
+    margin: 20px auto;
+    border: 3px solid transparent;
+    width:400px;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 50px;
+    padding: 15px 20px;
+    font-family: sans-serif;
+    position: relative;
+  background: transparent;
+  box-shadow:#535359 0 20px 50px rgba(red, green, blue, alpha);
+  transform: rotate(90deg);
+}
+.score-board:nth-child(1)
+{
+    transform: rotate(0deg);
+}
+.score-board:nth-child(2)
+{
+    transform: rotate(90deg);
+}
+
+.score-board:before{
+ width:400px;
+ border-radius: 4px;
+border: 2px solid orange;
+content:'';
+position: absolute;
+height: 2px;
+background: orange;
+left: -0%;
+top: -5px;
+animation: animate 4s linear infinite;
+}
+@keyframes animate 
+{
+    0%
+    {
+        transform: scaleX(0);
+        transform-origin: left;
+    }
+    50%
+    {
+        transform: scaleX(1);
+        transform-origin: left;
+        
+    }
+     50.1%
+    {
+        transform: scaleX(0);
+        transform-origin: right;
+        
+    }
+   100%
+    {
+        transform: scaleX(0);
+        transform-origin: right;
+        
+    }
+
+
+}
+
+
+.score-board::after{
+ width:400px;
+ border-radius: 4px;
+border: 2px solid orange;
+content:'';
+position: absolute;
+height: 2px;
+background: orange;
+left: 0%;
+top: 100px;
+ transform: rotate(90deg);
+animation: animate 4s linear infinite;
+animation-direction: 6s reverse;
+}
+
+@keyframes animate 
+{
+    0%
+    {
+        transform: scaleX(0);
+        transform-origin: left;
+    }
+    50%
+    {
+        transform: scaleX(1);
+        transform-origin: left;
+        
+    }
+    50.1%
+    {
+        transform: scaleX(1);
+        transform-origin: right;
+        
+    }
+
+   100%
+    {
+        transform: scaleX(0);
+        transform-origin: left;
+        
+    }
+
+
+}
+
+.badge span  {
+background: #cc5500;
+color:orange;
+font-size: 14px;
+padding: 4px 10px;
+font-family: sans-serif;
+}
+
+
+#user-label{
+position: absolute;
+color:orange;
+top: 20px;
+left: -25px;
+}
+
+#computer-label{
+position: absolute;
+color: orange;
+top: 20px;
+right: -23px;
+}
+.fas{
+height: 0;
+width: 2;
+}
+.selectionButton{
+  border: 4px solid transparent;
+  border-radius: 50%;
+  padding: 10px;
+  display: inline-block;
+  margin: 0 30px;
+  text-align: center;
+  height: 100px;
+  background: transparent;
+
+
+}
+
+
+.play-btn{
+
+border-radius: 25px;
+  background:#535359 ;
+  position: relative;
+  text-align: center;
+
+}
+

@@ -9,6 +9,7 @@ import './player.css';
 
         const Player = ({ selection }) => {
             return (
+                
                 <div className="player">
                     <img className="player-image"
                     src={
@@ -17,6 +18,7 @@ import './player.css';
                     alt="Rock Paper Scissors"
                     />
                 </div>
+                
              );
          }
     export default Player;

@@ -10,8 +10,8 @@ import './App.css';
 import Login from "./components/LoginContainer/Login.js";
 import SignUp from "./components/SignUpContainer/SignUp.js";
 import UserHome from './components/UserHomeContainer/UserHome.js';
-
 import Game from  './components/GameContainer/Game.js';
+import WelcomeFirstScreen from "./components/WelcomeFirstContainer/WelcomeFirst.js";
 import WelcomeScreen from "./components/WelcomeContainer/WelcomeScreen.js";
 import Menu from './components/MenuContainer/Menu.js';
 import ForgotPassword from "./components/ForgotPasswordContainer/ForgotPassword.js";
@@ -35,7 +35,8 @@ function App() {
               <div className="auth-inner">
               <Row>
                 <Switch>
-                  <Route exact path='/' component={WelcomeScreen} />
+                  <Route exact path='/' component={WelcomeFirstScreen} />
+                  <Route exact path='/Welcome-Screen' component={WelcomeScreen} />
                   <Route path="/sign-in" component={Login} />
                   <Route path="/sign-up" component={SignUp} />
                   <Route path="/userhome" component={UserHome} />
