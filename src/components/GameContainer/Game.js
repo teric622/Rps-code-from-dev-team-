@@ -14,12 +14,15 @@ const compSelection = [ "comprock", "compscissors", "comppaper"];
 
 export default class Game extends Component {
     
-    
 
     state = {
         playerOne: selection[0],
         computer: compSelection[0],
-        winner: ""
+        winner: "",
+        playerWin: 0,
+        computerWin: 0,
+        playerCounter: 1,
+        computerCounter: 1
     };
 
     startGame = () => {
@@ -28,14 +31,24 @@ export default class Game extends Component {
             count++;
             this.setState({
             computer: compSelection[Math.floor(Math.random() * compSelection.length)],
-            winner: ""
+            winner: "",
         });
 
 
         if (count > 5) {
             clearInterval(gameInterval);
-            this.setState ({ winner: this.selectWinner()
+            this.setState ({
+                 winner: this.selectWinner()
+
             });
+            if(this.state.winner === "You are a Winna!"){
+                console.log("Here");
+                this.Increment();
+            }
+            else if (this.state.winner === "Whomps, computer wins"){
+                console.log("There");
+                this.IncrementComp();
+            }
             }
         }, 100);
 };
@@ -46,6 +59,7 @@ export default class Game extends Component {
     if ( (playerOne ==="paper" &&  computer === "comppaper") ||
         (playerOne === "rock" && computer === "comprock") ||
         (playerOne === "scissors" && computer === "compscissors")){
+       
         return "Issa tie...";
     } else if (
         (playerOne === "rock" && computer === "compscissors") ||
@@ -54,10 +68,26 @@ export default class Game extends Component {
     ) {
         return "You are a Winna!";
     } else {
-        return "Whomps, computer wins ";
+        return "Whomps, computer wins";
     }
     };
-    
+
+    Increment = () =>{
+        let playerCounter = this.state.playerCounter;
+        this.setState({
+            playerWin: playerCounter
+
+        })
+        this.state.playerCounter = playerCounter + 1;
+    }
+
+    IncrementComp = () =>{
+        let computerCounter = this.state.computerCounter;
+        this.setState({
+            computerWin: computerCounter
+        })
+        this.state.computerCounter = computerCounter + 1;
+    }
 
     selectSelection = selection => {
     this.setState({
@@ -67,7 +97,7 @@ export default class Game extends Component {
     };
 
     render() {
-            const { playerOne, computer, winner } = this.state;
+            const { playerOne, computer, winner} = this.state;
            // scoreboard codelines 79-83 
         return (
             
@@ -79,7 +109,7 @@ export default class Game extends Component {
             <div class="score-board">
         <div id = "user-label" class = "badge" ><i class="fas fa-user"></i></div>
         <div id = "computer-label" class = "badge" > <i class="fas fa-robot"></i> </div>
-        <span id = "user-score">0 :<span id = "computer-score" > 0</span>
+    <span id = "user-score">{this.state.playerWin} :<span id = "computer-score" > {this.state.computerWin}</span>
         </span> 
        </div> 
        </div>
